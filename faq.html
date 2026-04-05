@@ -1,0 +1,167 @@
+<!Doctype HTML>
+<html>
+<head>
+<title>Japan</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<style>
+header{
+    background-color:lightcoral;
+    display:flex;
+    padding:15px 40px;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+}
+
+body{
+    background-color:mistyrose;
+    color:dimgray;
+    margin:0;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    margin-left:25px;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+
+.img-text:hover{
+    background:rgba(255,255,255,0.8);
+    color:black;
+}
+footer{
+    background-color:lightcoral;
+      padding:20px;
+    text-align:center;
+    color:white;
+    margin-top:40px;
+}
+
+.faq-wrapper {
+  background-color: #e6ecf0;
+  text-align: center;
+  padding-bottom: 80px;
+  color: #5f5d60;
+}
+
+#faq-list {
+  width: 500px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* Accordion */
+.faq-list-item {
+  margin:10px;
+  border-bottom:1px solid #ccc;
+  position:relative;
+  cursor:pointer;
+  text-align: left;
+}
+
+.faq-list-item h3 {
+  font-size: 14px;
+}
+
+.faq-list-item span {
+  position:absolute;
+  top:0;
+  right:5px;
+  color:#ccc;
+  font-size:13px;
+}
+
+.answer {
+  font-size: 12px;
+  display: none;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:12px;">
+<img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg"
+     alt="Japan Flag" style="width:80px;">
+<h1>Japan</h1>
+</div>
+<nav>
+<a href="indexdupe.html">HOME</a> 
+<a href="japantourist.html">TOURIST ATTRACTIONS</a> 
+<a href="foodandculture.html">FOOD AND CULTURE</a>
+<a href="faq.html">FAQ</a>
+</nav>
+</header>
+
+<div class="faq-wrapper">
+    <div class="container">
+      <div class="heading">
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq">
+        <ul id="faq-list">
+          <li class="faq-list-item">
+            <h3 class="question">How do I navigate the trains if I can't read Japanese?</h3>
+            <span>+</span>
+            <div class="answer">
+              <p>You can use google maps,platform numbers and just ask someone.</p>
+            </div>
+          </li>
+          <li class="faq-list-item">
+            <h3 class="question">Where do I have to take of my shoes?</h3>
+            <span>+</span>
+            <div class="answer">
+              <p>In japan you should take your shoes off at people's houses,traditonal inns,temples,shrines and some museums.</p>
+            </div>
+          </li>
+          <li class="faq-list-item">
+            <h3 class="question">Do I get fresh food in Japan?</h3>
+            <span>+</span>
+            <div class="answer">
+              <p>Of course!Japan has exceptionally fresh foods ready for you to eat!</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+<footer>
+© Aarav Puranik 2025
+</footer>
+<script>
+$(function() {
+$('.faq-list-item').click(function() {
+    var $answer = $(this).find('.answer');
+    if($answer.hasClass('open')) { 
+      $answer.removeClass('open');
+      // Use the slideUp() method to hide $answer
+      $answer.slideUp();
+      // Find the <span> elements inside, then rewrite the content using the text() method
+      $(this).find('span').text('+');
+      
+    } else {
+      $answer.addClass('open'); 
+      // Use the slideDown() method to show $answer
+    $answer.slideDown(); 
+      
+      // Find the <span> elements inside, then rewrite the content using the text() method
+      $(this).find('span').text('-');  
+      
+    }
+  });
+});
+</script>
+</body>
+</html>
